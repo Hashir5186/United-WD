@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>body {
+        background-image: url(medicity.jpg);
+        background-size: cover; /* Ensures the entire image covers the viewport */
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0; /* Removes default margin */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; /* Aligns content vertically */
+    }
+    
+    /* Basic styling for the container */
+    #d1 {
+        background-color: rgba(34, 34, 34, 0.8); /* Slightly transparent background */
+        color: white;
+        padding: 0px 100px 0px 100px;
+        border-radius: 40px 0 90px 0;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        width: 80%; /* Responsive width */
+        max-width: 500px; /* Maximum width */
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Responsive form input and button styles */
+    input, button {
+        border-radius: 5px;
+        width: 100%; /* Full width */
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box; /* Ensures padding is included in the element's width */
+    }
+    
+    /* Create the lightning border */
+    #d1::before {
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 98%;
+        height: 98%;
+        border: 5px solid transparent;
+        border-image: linear-gradient(45deg, #ff0000, #af5617, #000000, #c96f10, #000000) 1;
+        animation: lightning 1.5s infinite;
+    }
+    
+    /* Animation for lightning effect */
+    @keyframes lightning {
+        0%, 100% {
+            filter: brightness(10);
+            border-image-slice: 10;
+        }
+        25% {
+            filter: brightness(20);
+            border-image-slice: 2;
+        }
+        50% {
+            filter: brightness(1.5);
+            border-image-slice: 1.5;
+        }
+        75% {
+            filter: brightness(2.5);
+            border-image-slice: 1.5;
+        }
+    }
+    
+    /* Centering content inside the form */
+    form {
+        text-align: center;
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        #d1 {
+            width: 90%;
+            padding: 10px;
+        }
+    
+        input, button {
+            padding: 8px;
+        }
+    
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+    
+    </style>
+</head>
+
+<body><center>
+    <div id="d1">
+    <h1>Sign In</h1>
+    <form method="POST" action="/">
+        <label for="username">Username:</label><br>
+        <input type="text" placeholder="Enter Your Username" id="username" name="username" required>
+        <br>
+        <label for="email">Email:</label><br>
+        <input type="email" placeholder="Enter your Email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label><br>
+        <input type="password" placeholder="Your Password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">Sign In</button>
+        <p>New user? Sign up
+        <button type="submit">Sign Up</button></p><br><br>
+    </form>
+</div>
+</center>
+
+</body>
+
+</html>
